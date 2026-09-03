@@ -6,13 +6,15 @@
   position: relative;
   opacity: 1;
   height: auto;
+  min-height: 100vh;
   width: var(--cWidth);
   margin: auto;
+  padding: 80px 0;
+  box-sizing: border-box;
 }
 .about-me {
-  padding: 50px 0px;
-  padding-bottom: 0;
-  width: 500px;
+  padding: 30px 0px;
+  width: 550px;
   max-width: calc(100% - 15px);
 }
 .about-me h3 {
@@ -21,13 +23,72 @@
   letter-spacing: 7px;
   font-weight: 400;
   color: var(--accentColor);
+  margin-bottom: 20px;
 }
 
-.about-me p {
-  font-size: 33px;
+.about-me p.para {
+  font-size: 26px;
   font-weight: 600;
-  line-height: 36px;
-  letter-spacing: 1px;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-details p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  color: #b0aec2 !important;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+.about-motto {
+  margin-top: 8px;
+  display: inline-flex;
+}
+.about-motto span {
+  background: linear-gradient(90deg, #c481ff, #7f56d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.about-strengths {
+  margin-top: 15px;
+}
+.about-strengths h4 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+.strengths-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.strengths-grid span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #ddd;
+  transition: 0.2s;
+}
+.strengths-grid span:hover {
+  background: rgba(196, 129, 255, 0.15);
+  border-color: #c481ff;
+  color: #fff;
 }
 
 @media only screen and (min-width: 600px) {
@@ -37,7 +98,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: 550px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -50,22 +111,23 @@
     width: var(--cWidth);
     justify-content: right;
     max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
+    min-height: 100vh;
+    height: auto;
+    padding: 120px 0;
     opacity: 1;
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 52%;
   }
-  .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+  .about-me p.para {
+    font-size: 1.65vw;
+    line-height: 2.1vw;
   }
 }
 @media only screen and (min-width: 1950px) {
-  .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+  .about-me p.para {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
   }
 }

@@ -19,7 +19,10 @@ const Work = () => {
     const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
     let padding: number =
       parseInt(window.getComputedStyle(box[0]).padding) / 2;
-    translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+    translateX = Math.max(
+      0,
+      rect.width * box.length - (rectLeft + parentWidth) + padding
+    );
   }
 
   setTranslateX();
@@ -46,28 +49,55 @@ const Work = () => {
     ScrollTrigger.getById("work")?.kill();
   };
 }, []);
+  const projects = [
+    {
+      number: "01",
+      title: "Automatic Drip Irrigation",
+      category: "IoT & Embedded Systems",
+      tools: "Arduino UNO, Relay Module, Soil Moisture Sensor, C/C++, Automation",
+      image: "/images/drip_irrigation.jpg",
+      link: "https://github.com/khushaalsachdeva",
+    },
+    {
+      number: "02",
+      title: "Laser Detection & Telegram Alert",
+      category: "Hardware Security & IoT",
+      tools: "Arduino, Laser Detection, Telegram Bot API, Sensors, Real-Time Alerts",
+      image: "/images/laser_alert.jpg",
+      link: "https://github.com/khushaalsachdeva",
+    },
+    {
+      number: "03",
+      title: "Fitness & Nutrition Tracker",
+      category: "Software Design & UI/UX",
+      tools: "Software Design, Database Concepts, UI/UX, System Analysis, Web",
+      image: "/images/fitness_tracker.jpg",
+      link: "https://github.com/khushaalsachdeva",
+    },
+  ];
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
-          My <span>Work</span>
+          Featured <span>Projects</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {projects.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{project.number}</h3>
 
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{project.title}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage image={project.image} alt={project.title} link={project.link} />
             </div>
           ))}
         </div>

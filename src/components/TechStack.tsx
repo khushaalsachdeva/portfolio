@@ -168,7 +168,30 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
-      <h2> My Techstack</h2>
+      <h2>Tech Stack &amp; Skills</h2>
+
+      <div className="tech-categories">
+        <div className="tech-cat-card">
+          <h4>Programming</h4>
+          <p>C • C++ • Java • Python • JavaScript</p>
+        </div>
+        <div className="tech-cat-card">
+          <h4>Web Development</h4>
+          <p>HTML5 • CSS3 • JavaScript • React</p>
+        </div>
+        <div className="tech-cat-card">
+          <h4>Databases</h4>
+          <p>SQL • Modern DBMS (Saylor CS403)</p>
+        </div>
+        <div className="tech-cat-card">
+          <h4>Tools &amp; Hardware</h4>
+          <p>Git • GitHub • VS Code • Arduino UNO</p>
+        </div>
+        <div className="tech-cat-card">
+          <h4>Focus &amp; Security</h4>
+          <p>Cybersecurity • Ethical Hacking • Embedded IoT</p>
+        </div>
+      </div>
 
       <Canvas
         shadows
